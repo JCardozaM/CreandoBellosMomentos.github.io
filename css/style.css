@@ -94,20 +94,48 @@ footer {
   background-color: #ffffff;
 }
 
-.hero-image {
+.hero-section {
   width: 100%;
-  max-width: 1200px;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: 0;
+  height: 100vh; /* ocupa toda la pantalla */
+  background-image: url("images/inicio.jpg"); /* aquí pones tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-/* 💡 Ajustes responsivos para celular */
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.4); /* oscurece un poco para resaltar el texto */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-section h1 {
+  font-size: 2.8em;
+  margin: 0;
+}
+
+.hero-section p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+/* Responsive para celulares */
 @media screen and (max-width: 600px) {
-  .hero-image {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+  .hero-section {
+    height: 60vh;
+  }
+
+  .hero-section h1 {
+    font-size: 2em;
+  }
+
+  .hero-section p {
+    font-size: 1em;
   }
 }
