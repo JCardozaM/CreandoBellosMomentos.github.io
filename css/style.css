@@ -1,139 +1,139 @@
-/* Estilos generales */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fff8f0;
-  margin: 0;
-  padding: 0;
-  color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
 header {
-  background-color: #f6e7d7;
-  padding: 20px;
-  text-align: center;
+    background-color: #f6e7d7;
+    padding: 20px;
+    text-align: center;
 }
 
 h1 {
-  color: #c19a6b;
+    color: #c19a6b;
 }
 
 section {
-  padding: 20px;
+    padding: 20px;
 }
 
 footer {
-  background-color: #f6e7d7;
-  text-align: center;
-  padding: 10px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+    background-color: #f6e7d7;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Botón flotante de WhatsApp */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  background-color: #25d366;
-  border-radius: 50px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
-
-.whatsapp-float img {
-  width: 48px;
-  height: 48px;
-}
-
-/* Sección Galería */
-#galeria {
-  padding: 40px 20px;
-  background-color: #f8f8f8;
-  text-align: center;
-}
-
-#galeria h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-#galeria p {
-  font-size: 1.1em;
-  margin-bottom: 30px;
-}
-
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.galeria-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.galeria-grid img:hover {
-  transform: scale(1.03);
-}
-
-/* Hero Section */
+/* Hero section */
 .hero-section {
-  width: 100%;
-  height: 100vh;
-  background-image: url("../images/inicio.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 20px;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/inicio.jpg"); /* asegúrate que la imagen esté aquí */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
 }
 
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 30px;
-  border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .hero-overlay h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
+    font-size: 3em;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
 }
 
 .hero-overlay p {
-  font-size: 1.5em;
-  margin: 0;
+    font-size: 1.4em;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Galería */
+#galeria {
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+#galeria h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#galeria p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* Botón flotante WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    background-color: #25d366;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+.whatsapp-float img {
+    width: 48px;
+    height: 48px;
 }
 
 /* Responsive para celulares */
 @media screen and (max-width: 600px) {
-  .hero-section {
-    height: 60vh;
-    padding: 15px;
-  }
+    .hero-section {
+        height: 70vh;
+        padding: 15px;
+    }
 
-  .hero-overlay h1 {
-    font-size: 2em;
-  }
+    .hero-overlay h1 {
+        font-size: 1.8em;
+    }
 
-  .hero-overlay p {
-    font-size: 1.1em;
-  }
+    .hero-overlay p {
+        font-size: 1.1em;
+    }
 }
