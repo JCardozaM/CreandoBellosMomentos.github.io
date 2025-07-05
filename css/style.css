@@ -24,8 +24,6 @@ footer {
   background-color: #f6e7d7;
   text-align: center;
   padding: 10px;
-  position: relative;
-  bottom: 0;
   width: 100%;
 }
 
@@ -44,24 +42,22 @@ footer {
   text-align: center;
 }
 
-.hero-overlay {
+.hero-content {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 40px 20px;
-  border-radius: 12px;
-  max-width: 90%;
-  color: #fff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  color: white;
+  max-width: 80%;
 }
 
-.hero-text h1 {
-  font-size: 3em;
-  margin: 0 0 15px;
-  line-height: 1.2;
+.hero-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
 }
 
-.hero-text p {
-  font-size: 1.3em;
+.hero-content p {
+  font-size: 1.2em;
   margin: 0;
-  line-height: 1.4;
 }
 
 /* Galería */
@@ -123,11 +119,11 @@ footer {
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2em;
+  .hero-content h2 {
+    font-size: 1.8em;
   }
 
-  .hero-text p {
+  .hero-content p {
     font-size: 1em;
   }
 
