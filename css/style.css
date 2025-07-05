@@ -90,14 +90,24 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
-  background-color: #fff; /* o cualquier color */
+  padding: 0;
+  background-color: #ffffff;
 }
 
 .hero-image {
   width: 100%;
   max-width: 1200px;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  display: block;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* 💡 Ajustes responsivos para celular */
+@media screen and (max-width: 600px) {
+  .hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 }
