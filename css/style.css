@@ -1,3 +1,4 @@
+/* GENERAL */
 body {
   font-family: Arial, sans-serif;
   background-color: #fff8f0;
@@ -22,7 +23,7 @@ header p {
   margin: 5px 0 0;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero-section {
   background-image: url('../images/inicio.jpg');
   background-size: cover;
@@ -35,8 +36,10 @@ header p {
 }
 
 .hero-text {
+  background-color: rgba(0, 0, 0, 0.4); /* fondo oscuro para legibilidad */
   padding: 40px;
   border-radius: 10px;
+  color: white;
   text-align: center;
 }
 
@@ -65,6 +68,50 @@ section#servicios {
   margin: 10px 0;
 }
 
+/* GALERÍA HORIZONTAL */
+#galeria-horizontal {
+  background-color: #f8f8f8;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#galeria-horizontal h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+#galeria-horizontal p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.galeria-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.galeria-scroll img {
+  width: 280px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 10px;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.galeria-scroll img:hover {
+  transform: scale(1.05);
+}
+
+.galeria-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 /* CONTACTANOS */
 section#contactanos {
   padding: 40px 20px;
@@ -78,32 +125,6 @@ section#contactanos {
 
 #contactanos li {
   margin: 10px 0;
-}
-
-/* GALERÍA */
-#galeria {
-  background-color: #f8f8f8;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.galeria-grid img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.galeria-grid img:hover {
-  transform: scale(1.05);
 }
 
 /* WHATSAPP */
@@ -145,5 +166,9 @@ footer {
 
   .hero-section {
     height: 70vh;
+  }
+
+  .galeria-scroll img {
+    width: 220px;
   }
 }
