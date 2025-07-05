@@ -65,6 +65,21 @@ section#servicios {
   margin: 10px 0;
 }
 
+/* CONTACTANOS */
+section#contactanos {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#contactanos ul {
+  list-style: none;
+  padding: 0;
+}
+
+#contactanos li {
+  margin: 10px 0;
+}
+
 /* GALERÍA */
 #galeria {
   background-color: #f8f8f8;
