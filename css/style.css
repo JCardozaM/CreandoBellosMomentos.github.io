@@ -15,16 +15,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   position: relative;
+  padding: 0 20px;
 }
 
 .hero-text {
   background-color: rgba(0, 0, 0, 0.5);
+  color: white;
   padding: 30px;
   border-radius: 10px;
-  color: white;
-  max-width: 80%;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
 }
 
 .hero-text h2 {
@@ -52,7 +54,44 @@ body {
   margin: 10px 0;
 }
 
-/* CONTACTANOS */
+/* GALERÍA AUTOMÁTICA */
+#galeria {
+  background-color: #f8f8f8;
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.galeria-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.galeria-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll-carousel 30s linear infinite;
+}
+
+.galeria-track img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.galeria-track img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scroll-carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* CONTACTO */
 #contactanos {
   padding: 40px 20px;
   text-align: center;
@@ -65,34 +104,6 @@ body {
 
 #contactanos li {
   margin: 10px 0;
-}
-
-/* GALERÍA CARRUSEL */
-#galeria {
-  background-color: #f8f8f8;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 20px;
-  padding: 10px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.carousel img {
-  flex-shrink: 0;
-  width: 400px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.carousel img:hover {
-  transform: scale(1.05);
 }
 
 /* WHATSAPP */
@@ -127,18 +138,18 @@ footer {
 /* RESPONSIVE */
 @media screen and (max-width: 768px) {
   .hero-text h2 {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 
   .hero-text p {
     font-size: 1em;
   }
 
-  .hero-section {
-    height: 70vh;
+  .galeria-track img {
+    width: 250px;
   }
 
-  .carousel img {
-    width: 250px;
+  .hero-section {
+    height: 70vh;
   }
 }
