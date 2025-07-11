@@ -6,31 +6,30 @@ body {
   color: #333;
 }
 
-/* HERO IMAGEN SIN TEXTO */
+/* HERO */
 .hero-section {
   background-image: url('../images/inicio.jpg');
   background-size: cover;
   background-position: center;
-  height: 70vh;
-  width: 100%;
+  height: 80vh;
 }
 
-/* NUEVA SECCIÓN DE BIENVENIDA */
+/* BIENVENIDA */
 .bienvenida {
+  background-color: #fdf3ea;
   text-align: center;
   padding: 40px 20px;
-  background-color: #fef6ee;
 }
 
 .bienvenida h2 {
-  font-size: 2.5em;
+  font-size: 2.2em;
   margin-bottom: 10px;
   color: #c19a6b;
 }
 
 .bienvenida p {
   font-size: 1.2em;
-  color: #666;
+  margin: 0;
 }
 
 /* SERVICIOS */
@@ -48,56 +47,41 @@ body {
   margin: 10px 0;
 }
 
-/* CARRUSEL */
-#galeria {
+/* CARRUSEL GALERÍA */
+.carousel-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
   background-color: #f8f8f8;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.carousel {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
+  padding: 40px 10px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .carousel-track {
-  display: flex;
-  animation: scroll 40s linear infinite;
+  display: inline-flex;
+  gap: 20px;
+  animation: scroll 15s linear infinite;
+  animation-play-state: running;
 }
 
-.carousel img {
+.carousel-track img {
   width: 300px;
   height: auto;
-  margin: 0 10px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   flex-shrink: 0;
-  transition: transform 5.0s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
 
-.carousel img:hover {
+.carousel-track img:hover {
   transform: scale(1.05);
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
 
 /* CONTACTO */
 #contactanos {
-  padding: 40px 20px;
   text-align: center;
-}
-
-#contactanos ul {
-  list-style: none;
-  padding: 0;
-}
-
-#contactanos li {
-  margin: 10px 0;
+  padding: 40px 20px;
 }
 
 /* WHATSAPP */
@@ -122,20 +106,34 @@ body {
   height: 48px;
 }
 
-/* PIE DE PÁGINA */
+/* PIE */
 footer {
   background-color: #f6e7d7;
   text-align: center;
   padding: 20px;
 }
 
+/* CARRUSEL KEYFRAMES */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* RESPONSIVE */
 @media screen and (max-width: 768px) {
   .bienvenida h2 {
-    font-size: 1.8em;
+    font-size: 1.6em;
   }
 
-  .carousel img {
-    width: 180px;
+  .bienvenida p {
+    font-size: 1em;
+  }
+
+  .carousel-track img {
+    width: 220px;
+  }
+
+  .hero-section {
+    height: 50vh;
   }
 }
