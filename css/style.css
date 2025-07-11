@@ -6,25 +6,31 @@ body {
   color: #333;
 }
 
-/* HERO SECTION */
+/* HERO IMAGEN SIN TEXTO */
 .hero-section {
   background-image: url('../images/inicio.jpg');
   background-size: cover;
   background-position: center;
-  height: 90vh;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  text-align: center;
-  position: relative;
+  height: 70vh;
+  width: 100%;
 }
 
-.hero-text {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 20px 30px;
-  margin-bottom: 40px;
-  border-radius: 10px;
+/* NUEVA SECCIÓN DE BIENVENIDA */
+.bienvenida {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fef6ee;
+}
+
+.bienvenida h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #c19a6b;
+}
+
+.bienvenida p {
+  font-size: 1.2em;
+  color: #666;
 }
 
 /* SERVICIOS */
@@ -51,32 +57,32 @@ body {
 
 .carousel {
   overflow: hidden;
-  max-width: 100%;
+  width: 100%;
   position: relative;
 }
 
 .carousel-track {
   display: flex;
-  animation: scroll 30s linear infinite;
+  animation: scroll 40s linear infinite;
 }
 
 .carousel img {
-  flex: 0 0 auto;
   width: 300px;
   height: auto;
-  border-radius: 10px;
   margin: 0 10px;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex-shrink: 0;
   transition: transform 0.3s ease-in-out;
 }
 
 .carousel img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  100% { transform: translateX(-50%); }
 }
 
 /* CONTACTO */
@@ -125,11 +131,11 @@ footer {
 
 /* RESPONSIVE */
 @media screen and (max-width: 768px) {
-  .hero-text h2 {
-    font-size: 1.5em;
+  .bienvenida h2 {
+    font-size: 1.8em;
   }
 
   .carousel img {
-    width: 200px;
+    width: 180px;
   }
 }
