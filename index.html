@@ -9,18 +9,17 @@
 <body>
 
   <!-- ENCABEZADO -->
-  <!-- <header> -->
-    <!-- <h1>Creando Bellos Momentos</h1> -->
-    <!-- <p>Decoración profesional con globos en Chihuahua, México</p> -->
-  <!-- </header> -->
+  <header>
+    <h1>Creando Bellos Momentos</h1>
+    <p>Decoración profesional con globos en Chihuahua, México</p>
+  </header>
 
   <!-- HERO SECTION -->
-  <section class="hero-section"></section>
-
-  <!-- MENSAJE DE BIENVENIDA -->
-  <section class="mensaje-bienvenida">
-    <h2>Decoración para eventos inolvidables</h2>
-    <p>Calidad, creatividad y atención personalizada</p>
+  <section class="hero-section">
+    <div class="hero-text">
+      <h2>Decoración con globos para eventos inolvidables</h2>
+      <p>Calidad, creatividad y atención personalizada</p>
+    </div>
   </section>
 
   <!-- SERVICIOS -->
@@ -53,7 +52,7 @@
     </div>
   </section>
 
-  <!-- CONTACTANOS -->
+  <!-- CONTACTO -->
   <section id="contactanos">
     <h2>Contáctanos</h2>
     <ul>
@@ -71,6 +70,20 @@
   <footer>
     <p>&copy; 2024 Creando Bellos Momentos</p>
   </footer>
+
+  <!-- JS para auto scroll galería -->
+  <script>
+    const scrollContainer = document.querySelector('.galeria-scroll');
+    let scrollStep = 1;
+    function autoScroll() {
+      scrollContainer.scrollLeft += scrollStep;
+      if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+        scrollContainer.scrollLeft = 0;
+      }
+      requestAnimationFrame(autoScroll);
+    }
+    autoScroll();
+  </script>
 
 </body>
 </html>
