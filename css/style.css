@@ -27,8 +27,7 @@ header p {
   background-image: url('../images/inicio.jpg');
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  position: relative;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,6 +39,7 @@ header p {
   padding: 40px;
   border-radius: 10px;
   color: white;
+  max-width: 90%;
 }
 
 .hero-text h2 {
@@ -82,7 +82,7 @@ header p {
   margin: 10px 0;
 }
 
-/* GALERÍA HORIZONTAL */
+/* GALERÍA */
 #galeria {
   background-color: #f8f8f8;
   padding: 40px 20px;
@@ -96,6 +96,7 @@ header p {
   gap: 20px;
   padding-bottom: 10px;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 .galeria-scroll img {
@@ -153,7 +154,7 @@ footer {
   }
 
   .hero-section {
-    height: 70vh;
+    min-height: 70vh;
   }
 
   .galeria-scroll img {
