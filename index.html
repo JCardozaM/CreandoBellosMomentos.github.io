@@ -8,12 +8,6 @@
 </head>
 <body>
 
-  <!-- ENCABEZADO -->
-  <header>
-    <h1>Creando Bellos Momentos</h1>
-    <p>Decoración profesional con globos en Chihuahua, México</p>
-  </header>
-
   <!-- HERO SECTION -->
   <section class="hero-section">
     <div class="hero-text">
@@ -33,26 +27,21 @@
     </ul>
   </section>
 
-  <!-- GALERÍA -->
+  <!-- GALERÍA CARRUSEL -->
   <section id="galeria">
     <h2>Galería</h2>
     <p>Algunos de nuestros trabajos recientes:</p>
-    <div class="galeria-scroll" id="galeriaScroll">
+    <div class="carousel" id="carousel">
       <img src="images/navidad.JPG" alt="Decoración 1">
       <img src="images/bello.JPG" alt="Decoración 2">
       <img src="images/pink.JPG" alt="Decoración 3">
       <img src="images/hallo.JPG" alt="Decoración 4">
       <img src="images/negro.JPG" alt="Decoración 5">
       <img src="images/toy.JPG" alt="Decoración 6">
-      <img src="images/cab1.jpg" alt="Decoración 7">
-      <img src="images/caba.jpg" alt="Decoración 8">
-      <img src="images/emi.jpg" alt="Decoración 9">
-      <img src="images/mesa.jpg" alt="Decoración 10">
-      <img src="images/vaca.jpg" alt="Decoración 11">
     </div>
   </section>
 
-  <!-- CONTACTO -->
+  <!-- Contactanos -->
   <section id="contactanos">
     <h2>Contáctanos</h2>
     <ul>
@@ -71,14 +60,19 @@
     <p>&copy; 2024 Creando Bellos Momentos</p>
   </footer>
 
-  <!-- Auto-scroll JavaScript -->
+  <!-- SCRIPT CARRUSEL -->
   <script>
-    const galeria = document.getElementById('galeriaScroll');
+    const carousel = document.getElementById('carousel');
+    let scrollAmount = 0;
     setInterval(() => {
-      galeria.scrollBy({ left: 1, behavior: 'smooth' });
-      if (galeria.scrollLeft + galeria.clientWidth >= galeria.scrollWidth - 1) {
-        galeria.scrollTo({ left: 0, behavior: 'smooth' });
+      scrollAmount += 1;
+      if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+        scrollAmount = 0;
       }
+      carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
     }, 30); // velocidad
   </script>
 
