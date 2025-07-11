@@ -99,7 +99,7 @@ header p {
 }
 
 .galeria-scroll img {
-  width: 280px;
+  width: 360px;
   height: auto;
   flex-shrink: 0;
   border-radius: 10px;
