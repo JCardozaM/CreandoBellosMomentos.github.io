@@ -110,7 +110,7 @@ header p {
 
 .galeria-scroll img:hover,
 .galeria-scroll img:active {
-  transform: scale(1.05);
+  transform: scale(1.5);
 }
 
 /* WHATSAPP */
