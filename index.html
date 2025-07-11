@@ -8,10 +8,10 @@
 </head>
 <body>
 
-  <!-- HERO (solo imagen sin texto) -->
+  <!-- HERO -->
   <section class="hero-section"></section>
 
-  <!-- NUEVA SECCIÓN DE BIENVENIDA -->
+  <!-- TEXTO BIENVENIDA -->
   <section class="bienvenida">
     <h2>Decoración con globos para eventos inolvidables</h2>
     <p>Calidad, creatividad y atención personalizada</p>
@@ -28,18 +28,23 @@
     </ul>
   </section>
 
-  <!-- GALERÍA CARRUSEL -->
+  <!-- GALERÍA -->
   <section id="galeria">
     <h2>Galería</h2>
     <p>Algunos de nuestros trabajos recientes:</p>
-    <div class="carousel">
+    <div class="carousel-container" id="carousel">
       <div class="carousel-track">
-        <img src="images/navidad.JPG" alt="Decoración 1">
-        <img src="images/bello.JPG" alt="Decoración 2">
-        <img src="images/pink.JPG" alt="Decoración 3">
-        <img src="images/hallo.JPG" alt="Decoración 4">
-        <img src="images/negro.JPG" alt="Decoración 5">
-        <img src="images/toy.JPG" alt="Decoración 6">
+        <img src="images/navidad.JPG" alt="Decoración 1" />
+        <img src="images/bello.JPG" alt="Decoración 2" />
+        <img src="images/pink.JPG" alt="Decoración 3" />
+        <img src="images/hallo.JPG" alt="Decoración 4" />
+        <img src="images/negro.JPG" alt="Decoración 5" />
+        <img src="images/toy.JPG" alt="Decoración 6" />
+        <img src="images/cab1.jpg" alt="Decoración 7" />
+        <img src="images/caba.jpg" alt="Decoración 8" />
+        <img src="images/emi.jpg" alt="Decoración 9" />
+        <img src="images/mesa.jpg" alt="Decoración 10" />
+        <img src="images/vaca.jpg" alt="Decoración 11" />
       </div>
     </div>
   </section>
@@ -47,21 +52,86 @@
   <!-- CONTACTO -->
   <section id="contactanos">
     <h2>Contáctanos</h2>
-    <ul>
-      <li>Para tu cotización no olvides darle click al logo de WhatsApp</li>
-    </ul>
+    <p>Para tu cotización, da clic al logo de WhatsApp</p>
   </section>
 
-  <!-- BOTÓN WHATSAPP -->
+  <!-- WHATSAPP -->
   <a href="https://wa.me/526144532499?text=Hola,%20me%20interesa%20saber%20más%20sobre%20sus%20servicios%20de%20decoración"
      class="whatsapp-float" target="_blank">
     <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
   </a>
 
-  <!-- PIE DE PÁGINA -->
+  <!-- PIE -->
   <footer>
     <p>&copy; 2024 Creando Bellos Momentos</p>
   </footer>
 
+  <!-- JavaScript: pausar animación + deslizar con el dedo -->
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const carousel = document.getElementById('carousel');
+
+    // Pausar animación al tocar o pasar el mouse
+    function pauseAnimation() {
+      track.style.animationPlayState = 'paused';
+    }
+
+    function resumeAnimation() {
+      track.style.animationPlayState = 'running';
+    }
+
+    carousel.addEventListener('mouseenter', pauseAnimation);
+    carousel.addEventListener('mouseleave', resumeAnimation);
+    carousel.addEventListener('touchstart', pauseAnimation);
+    carousel.addEventListener('touchend', resumeAnimation);
+
+    // Hacerlo deslizable horizontal con el dedo o mouse
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    carousel.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+      carousel.classList.add('active');
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+      isDown = false;
+      carousel.classList.remove('active');
+    });
+
+    carousel.addEventListener('mouseup', () => {
+      isDown = false;
+      carousel.classList.remove('active');
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2;
+      carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    // Touch (móvil)
+    carousel.addEventListener('touchstart', (e) => {
+      isDown = true;
+      startX = e.touches[0].pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('touchend', () => {
+      isDown = false;
+    });
+
+    carousel.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      const x = e.touches[0].pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2;
+      carousel.scrollLeft = scrollLeft - walk;
+    });
+  </script>
 </body>
 </html>
