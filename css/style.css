@@ -66,7 +66,7 @@ body {
 }
 
 .carousel-track img {
-  width: 300px;
+  width: 280px;
   height: auto;
   border-radius: 10px;
   flex-shrink: 0;
@@ -130,7 +130,7 @@ footer {
   }
 
   .carousel-track img {
-    width: 220px;
+    width: 180px;
   }
 
   .hero-section {
