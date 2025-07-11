@@ -37,7 +37,7 @@
   <section id="galeria">
     <h2>Galería</h2>
     <p>Algunos de nuestros trabajos recientes:</p>
-    <div class="galeria-scroll">
+    <div class="galeria-scroll" id="galeriaScroll">
       <img src="images/navidad.JPG" alt="Decoración 1">
       <img src="images/bello.JPG" alt="Decoración 2">
       <img src="images/pink.JPG" alt="Decoración 3">
@@ -71,18 +71,15 @@
     <p>&copy; 2024 Creando Bellos Momentos</p>
   </footer>
 
-  <!-- JS para auto scroll galería -->
+  <!-- Auto-scroll JavaScript -->
   <script>
-    const scrollContainer = document.querySelector('.galeria-scroll');
-    let scrollStep = 1;
-    function autoScroll() {
-      scrollContainer.scrollLeft += scrollStep;
-      if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
-        scrollContainer.scrollLeft = 0;
+    const galeria = document.getElementById('galeriaScroll');
+    setInterval(() => {
+      galeria.scrollBy({ left: 1, behavior: 'smooth' });
+      if (galeria.scrollLeft + galeria.clientWidth >= galeria.scrollWidth - 1) {
+        galeria.scrollTo({ left: 0, behavior: 'smooth' });
       }
-      requestAnimationFrame(autoScroll);
-    }
-    autoScroll();
+    }, 30); // velocidad
   </script>
 
 </body>
