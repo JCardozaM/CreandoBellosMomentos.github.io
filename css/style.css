@@ -61,7 +61,7 @@ body {
 .carousel-track {
   display: inline-flex;
   gap: 20px;
-  animation: scroll 15s linear infinite;
+  animation: scroll 25s linear infinite;
   animation-play-state: running;
 }
 
